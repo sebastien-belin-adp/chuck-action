@@ -48,4 +48,3 @@ rules:
     'prettier/prettier': 'error',
     'semi': 'off'
   }
-  
