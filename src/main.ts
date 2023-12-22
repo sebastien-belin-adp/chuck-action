@@ -13,7 +13,7 @@ async function run() {
   try {
     const token = process.env.GITHUB_TOKEN || ''
 
-    const context = (github as any).context
+    const context = github.context
     const command = context.payload.comment.body.trim()
 
     if (command == '/chuck') {
