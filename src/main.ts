@@ -21,7 +21,7 @@ async function run () {
 
       const joke = await getChuckNorrisJoke()
 
-      octokit.issues.createComment({
+      octokit.rest.issues.createComment({
         owner: repository.owner.login,
         repo: repository.name,
         issue_number: issue.number,
