@@ -1,20 +1,20 @@
-const core = require('@actions/core')
-const github = require('@actions/github')
-const axios = require('axios')
+const core = require("@actions/core")
+const github = require("@actions/github")
+const axios = require("axios")
 
 const getChuckNorrisJoke = async () => {
-  const response = await axios.get('https://api.chucknorris.io/jokes/random')
+  const response = await axios.get("https://api.chucknorris.io/jokes/random")
   return response.value
 }
 
 async function run () {
   try {
-    const token = process.env.GITHUB_TOKEN || ''
+    const token = process.env.GITHUB_TOKEN || ""
 
     const context = github.context
     const command = context.payload.comment.body.trim()
 
-    if (command === '/chuck') {
+    if (command === "/chuck") {
       const octokit = github.getOctokit(token)
       const repository = context.payload.repository
       const issue = context.payload.issue
