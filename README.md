@@ -8,7 +8,7 @@ Display a Chuck Norris Joke to a PR
 on: issue_comment
 
 jobs:
-  octobomb:
+  chuck-norris-joke:
     runs-on: ubuntu-latest
     steps:
     - uses: sebastien-belin-adp/chuck-action@main

@@ -32382,6 +32382,7 @@ async function run() {
             const repository = context.payload.repository;
             const issue = context.payload.issue;
             const joke = await getChuckNorrisJoke();
+            console.debug(`Chuck Norris Joke: ${joke}`);
             octokit.rest.issues.createComment({
                 owner: repository.owner.login,
                 repo: repository.name,
