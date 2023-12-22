@@ -1,0 +1,7 @@
+name: Display a Chuck Norris joke in an issue or a PR
+description: Actions to brighten your day with a Chuck Norris joke
+author: Sebastien Belin
+
+runs:
+  using: node20
+  main: dist/main.js
