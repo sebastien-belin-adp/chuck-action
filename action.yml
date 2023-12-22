@@ -4,4 +4,4 @@ author: Sebastien Belin
 
 runs:
   using: node20
-  main: dist/main.js
+  main: dist/index.js
