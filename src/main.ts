@@ -1,6 +1,13 @@
-import * as core from '@actions/core'
-import * as github from '@actions/github'
-import * as axios from 'axios';
+const core = require('@actions/core');
+const github = require('@actions/github');
+const axios = require('axios');
+
+
+const getChuckNorrisJoke = async () => {
+  const response = await axios.get(`https://api.chucknorris.io/jokes/random`);
+  return response.value;
+};
+
 
 async function run() {
   try {
@@ -10,15 +17,17 @@ async function run() {
     const command = context.payload.comment.body.trim()
 
     if (command == '/chuck') {
-      const octokit = new github.GitHub(token)
+      const octokit = github.getOctokit(token)
       const repository = context.payload.repository
       const issue = context.payload.issue
+
+      const joke = await getChuckNorrisJoke();
 
       octokit.issues.createComment({
         owner: repository.owner.login,
         repo: repository.name,
         issue_number: issue.number,
-        body: '![' + octocat + '](' + octodex_url + '/' + octocat + ')'
+        body: joke
       })
     }
   } catch (err) {
