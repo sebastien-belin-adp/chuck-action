@@ -1,6 +1,6 @@
 # chuck-action
 
-Display a Chuck Norris Joke to a PR
+Display a Chuck Norris Joke to a PR using https://api.chucknorris.io/
 
 ## Example
 
