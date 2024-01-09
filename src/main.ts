@@ -5,7 +5,7 @@ const axios = require("axios")
 
 const getChuckNorrisJoke = async () => {
   const response = await axios.get("https://api.chucknorris.io/jokes/random")
-  return response.value
+  return response.data.value
 }
 
 async function run () {

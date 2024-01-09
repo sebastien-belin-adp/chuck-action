@@ -55282,7 +55282,7 @@ const { Octokit } = __nccwpck_require__(1231);
 const axios = __nccwpck_require__(8757);
 const getChuckNorrisJoke = async () => {
     const response = await axios.get("https://api.chucknorris.io/jokes/random");
-    return response.value;
+    return response.data.value;
 };
 async function run() {
     try {
