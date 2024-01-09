@@ -7,6 +7,9 @@ Display a Chuck Norris Joke to a PR
 ```yml
 on: issue_comment
 
+permissions:
+  issues: write
+
 jobs:
   chuck-norris-joke:
     runs-on: ubuntu-latest
