@@ -29,7 +29,7 @@ async function run () {
         owner: repository.owner.login,
         repo: repository.name,
         issue_number: issue.number,
-        body: `${chuckNorrisImg} ${joke}`
+        body: `${joke}`
       })
     }
   } catch (err) {
