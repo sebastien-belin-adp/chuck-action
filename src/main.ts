@@ -1,5 +1,6 @@
 const core = require("@actions/core")
 const github = require("@actions/github")
+const { Octokit } = require("@octokit/action");
 const axios = require("axios")
 
 const getChuckNorrisJoke = async () => {
@@ -15,7 +16,7 @@ async function run () {
     const command = context.payload.comment.body.trim()
 
     if (command === "/chuck") {
-      const octokit = github.getOctokit(token)
+      const octokit = new Octokit();
       const repository = context.payload.repository
       const issue = context.payload.issue
 
